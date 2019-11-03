@@ -1,5 +1,10 @@
 pipeline {
     agent { node 'master' }
+    
+    parameters {
+        string(defaultValue: "", description: 'Enter the user name', name: 'username')
+    }
+    
     stages{
         stage('Prepare') {
             steps {
